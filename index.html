@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oil Investment Opportunity — India</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:  '#0f172a',
+            sky:   '#38bdf8',
+            frost: '#f1f5f9',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── base ── */
+    * { box-sizing: border-box; }
+    body { background: #0f172a; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; }
+
+    /* ── hero image ── */
+    .hero-img {
+      background: linear-gradient(to bottom, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.92) 70%, #0f172a 100%),
+        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80') center/cover no-repeat;
+    }
+
+    /* ── quiz card ── */
+    .quiz-card {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid rgba(56,189,248,0.18);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(56,189,248,0.06);
+    }
+
+    /* ── progress bar ── */
+    .progress-bar { transition: width 0.45s cubic-bezier(.4,0,.2,1); }
+
+    /* ── answer option ── */
+    .opt-btn {
+      background: rgba(30,41,59,0.8);
+      border: 1.5px solid rgba(56,189,248,0.22);
+      color: #f1f5f9;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .opt-btn:hover  { background: rgba(56,189,248,0.12); border-color: #38bdf8; transform: translateY(-1px); }
+    .opt-btn.selected { background: rgba(56,189,248,0.2); border-color: #38bdf8; box-shadow: 0 0 0 2px rgba(56,189,248,0.35); }
+
+    /* ── CTA button ── */
+    .cta-btn {
+      background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+      color: #0f172a;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(56,189,248,0.4);
+    }
+    .cta-btn:hover  { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(56,189,248,0.55); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    /* ── input field ── */
+    .field {
+      background: rgba(15,23,42,0.7);
+      border: 1.5px solid rgba(56,189,248,0.22);
+      color: #f1f5f9;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .field:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56,189,248,0.18); }
+    .field::placeholder { color: #64748b; }
+    .field.error { border-color: #f87171; }
+
+    /* ── screen transitions ── */
+    .screen { display: none; animation: fadeUp 0.4s ease forwards; }
+    .screen.active { display: block; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── trust badge ── */
+    .badge { background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); }
+
+    /* ── phone prefix ── */
+    .phone-wrap input { padding-left: 4rem; }
+    .phone-prefix {
+      position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      background: rgba(56,189,248,0.12);
+      border-right: 1.5px solid rgba(56,189,248,0.22);
+      color: #38bdf8; font-weight: 600;
+      padding: 0 0.75rem; height: 100%;
+      display: flex; align-items: center;
+      border-radius: 0.5rem 0 0 0.5rem;
+      font-size: 0.9rem; letter-spacing: 0.02em;
+    }
+
+    /* ── success icon pulse ── */
+    .success-ring {
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0   rgba(56,189,248,0.6); }
+      70%  { box-shadow: 0 0 0 20px rgba(56,189,248,0); }
+      100% { box-shadow: 0 0 0 0   rgba(56,189,248,0); }
+    }
+
+    /* ── spinner ── */
+    .spinner {
+      border: 3px solid rgba(15,23,42,0.35);
+      border-top-color: #0f172a;
+      border-radius: 50%;
+      width: 20px; height: 20px;
+      animation: spin 0.7s linear infinite;
+      display: inline-block; vertical-align: middle; margin-right: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- ── HERO ── -->
+  <div class="hero-img">
+    <div class="max-w-xl mx-auto px-4 pt-10 pb-6 text-center">
+      <div class="badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold text-sky uppercase tracking-widest mb-5">
+        <span class="w-2 h-2 bg-sky rounded-full animate-pulse"></span>
+        Limited Spots — India 2026
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-3 text-frost">
+        Earn <span class="text-sky">₹50,000–₹5,00,000/mo</span><br/>with India's Oil Sector
+      </h1>
+      <p class="text-slate-400 text-sm md:text-base max-w-sm mx-auto">
+        Answer 5 quick questions and get a personalised investment plan from our analysts — 100% free.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── QUIZ CONTAINER ── -->
+  <div class="max-w-xl mx-auto px-4 pb-16 -mt-2">
+    <div class="quiz-card rounded-2xl p-6 md:p-8">
+
+      <!-- Progress -->
+      <div id="progressWrap" class="mb-6">
+        <div class="flex justify-between text-xs text-slate-400 mb-2 font-medium">
+          <span id="stepLabel">Step 1 of 5</span>
+          <span id="pctLabel">0%</span>
+        </div>
+        <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+          <div id="progressBar" class="progress-bar h-2 rounded-full bg-sky" style="width:0%"></div>
+        </div>
+      </div>
+
+      <!-- ─────────────── STEP 1 ─────────────── -->
+      <div id="step1" class="screen active">
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">What is your investment experience?</h2>
+        <p class="text-slate-400 text-sm mb-5">Select the option that best describes you.</p>
+        <div class="space-y-3" id="opts1">
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Beginner">
+            🌱 <span class="ml-2">Beginner — just getting started</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Intermediate">
+            📈 <span class="ml-2">Intermediate — some prior investments</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Pro">
+            🏆 <span class="ml-2">Pro — seasoned investor</span>
+          </button>
+        </div>
+        <button id="next1" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(2)">
+          Continue →
+        </button>
+      </div>
+
+      <!-- ─────────────── STEP 2 ─────────────── -->
+      <div id="step2" class="screen">
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Desired monthly income in ₹?</h2>
+        <p class="text-slate-400 text-sm mb-5">What is your target monthly earnings from investments?</p>
+        <div class="space-y-3" id="opts2">
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹50,000">
+            💼 <span class="ml-2">₹50,000 / month</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹1,00,000">
+            💎 <span class="ml-2">₹1,00,000 / month</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹5,00,000+">
+            🚀 <span class="ml-2">₹5,00,000+ / month</span>
+          </button>
+        </div>
+        <button id="next2" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(3)">
+          Continue →
+        </button>
+      </div>
+
+      <!-- ─────────────── STEP 3 ─────────────── -->
+      <div id="step3" class="screen">
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Current occupation?</h2>
+        <p class="text-slate-400 text-sm mb-5">This helps us tailor your investment strategy.</p>
+        <div class="space-y-3" id="opts3">
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Self-employed">
+            🛠 <span class="ml-2">Self-employed</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Professional">
+            👔 <span class="ml-2">Professional (Salaried)</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Business Owner">
+            🏢 <span class="ml-2">Business Owner</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Other">
+            🌐 <span class="ml-2">Other</span>
+          </button>
+        </div>
+        <button id="next3" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(4)">
+          Continue →
+        </button>
+      </div>
+
+      <!-- ─────────────── STEP 4 ─────────────── -->
+      <div id="step4" class="screen">
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Risk tolerance?</h2>
+        <p class="text-slate-400 text-sm mb-5">How comfortable are you with investment risk?</p>
+        <div class="space-y-3" id="opts4">
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Low">
+            🛡 <span class="ml-2">Low — protect my capital above all</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Balanced">
+            ⚖️ <span class="ml-2">Balanced — steady growth with managed risk</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Aggressive">
+            ⚡ <span class="ml-2">Aggressive — maximum returns</span>
+          </button>
+        </div>
+        <button id="next4" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(5)">
+          Continue →
+        </button>
+      </div>
+
+      <!-- ─────────────── STEP 5 ─────────────── -->
+      <div id="step5" class="screen">
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Preferred contact time?</h2>
+        <p class="text-slate-400 text-sm mb-5">When should our analyst reach out to you?</p>
+        <div class="space-y-3" id="opts5">
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Morning">
+            🌅 <span class="ml-2">Morning (9 AM – 12 PM)</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Evening">
+            🌆 <span class="ml-2">Evening (5 PM – 9 PM)</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="ASAP">
+            ⚡ <span class="ml-2">ASAP — call me now!</span>
+          </button>
+        </div>
+        <button id="next5" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo('lead')">
+          See My Investment Plan →
+        </button>
+      </div>
+
+      <!-- ─────────────── LEAD FORM ─────────────── -->
+      <div id="stepLead" class="screen">
+        <!-- hide progress on lead -->
+        <div class="text-center mb-6">
+          <div class="inline-flex items-center gap-2 badge rounded-full px-3 py-1 text-xs font-semibold text-sky mb-3">
+            ✅ Quiz Complete — Almost There!
+          </div>
+          <h2 class="text-xl md:text-2xl font-extrabold text-frost leading-snug">
+            Your personalised plan is ready.<br/>
+            <span class="text-sky">Where should we send it?</span>
+          </h2>
+          <p class="text-slate-400 text-sm mt-2">Our analyst will call you within 24 hours. Zero spam — guaranteed.</p>
+        </div>
+
+        <form id="leadForm" novalidate class="space-y-4" onsubmit="submitLead(event)">
+          <!-- Name -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wider">Full Name</label>
+            <input id="fname" type="text" placeholder="Rajesh Kumar" autocomplete="name"
+              class="field w-full rounded-xl px-4 py-3 text-sm" />
+            <p id="fnameErr" class="text-red-400 text-xs mt-1 hidden">Please enter your full name.</p>
+          </div>
+          <!-- Email -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wider">Gmail Address</label>
+            <input id="femail" type="email" placeholder="rajesh@gmail.com" autocomplete="email"
+              class="field w-full rounded-xl px-4 py-3 text-sm" />
+            <p id="femailErr" class="text-red-400 text-xs mt-1 hidden">Enter a valid Gmail address.</p>
+          </div>
+          <!-- Phone -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wider">
+              Phone Number
+              <span class="ml-2 text-sky font-normal normal-case tracking-normal">— Indian mobile required</span>
+            </label>
+            <div class="relative phone-wrap">
+              <span class="phone-prefix">+91</span>
+              <input id="fphone" type="tel" placeholder="Enter 10-digit mobile number" maxlength="10"
+                autocomplete="tel" inputmode="numeric" pattern="[6-9][0-9]{9}"
+                class="field w-full rounded-xl px-4 py-3.5 text-sm font-medium tracking-widest"
+                style="padding-left:4rem; letter-spacing:0.08em" />
+            </div>
+            <p id="fphoneErr" class="text-red-400 text-xs mt-1.5 hidden">
+              ⚠ Must be exactly 10 digits and start with 6, 7, 8, or 9.
+            </p>
+          </div>
+
+          <!-- Privacy note -->
+          <p class="text-slate-500 text-xs text-center pt-1">
+            🔒 Your data is 100% secure and never shared with third parties.
+          </p>
+
+          <!-- Submit -->
+          <button type="submit" id="submitBtn" class="cta-btn w-full py-4 rounded-xl text-sm mt-2 uppercase tracking-widest">
+            SECURE ACCESS TO AI SYSTEM
+          </button>
+        </form>
+
+        <!-- Social proof -->
+        <div class="flex items-center justify-center gap-4 mt-5 flex-wrap">
+          <span class="text-slate-500 text-xs flex items-center gap-1">⭐⭐⭐⭐⭐ <span>4.9 / 5</span></span>
+          <span class="text-slate-600 text-xs">|</span>
+          <span class="text-slate-500 text-xs">🇮🇳 2,400+ Indian investors</span>
+          <span class="text-slate-600 text-xs">|</span>
+          <span class="text-slate-500 text-xs">📞 Dedicated analysts</span>
+        </div>
+      </div>
+
+      <!-- ─────────────── SUCCESS ─────────────── -->
+      <div id="stepSuccess" class="screen text-center py-4">
+        <div class="flex justify-center mb-5">
+          <div class="success-ring w-20 h-20 rounded-full bg-sky/10 border-2 border-sky flex items-center justify-center text-4xl">
+            ✅
+          </div>
+        </div>
+        <h2 class="text-2xl font-extrabold text-frost mb-2">You're In! 🎉</h2>
+        <p class="text-slate-300 text-sm mb-1">
+          Thank you, <strong id="successName" class="text-sky"></strong>!
+        </p>
+        <p class="text-slate-400 text-sm max-w-xs mx-auto mb-6">
+          Our senior oil-sector analyst will contact you on WhatsApp within <span class="text-sky font-semibold">24 hours</span> with your personalised investment report.
+        </p>
+
+        <!-- Summary card -->
+        <div class="badge rounded-xl p-4 text-left space-y-2 mb-6 text-sm">
+          <p class="text-slate-400 font-semibold text-xs uppercase tracking-wider mb-2">Your Answers</p>
+          <div class="flex justify-between text-xs"><span class="text-slate-400">Experience:</span><span id="s_exp" class="text-frost font-medium"></span></div>
+          <div class="flex justify-between text-xs"><span class="text-slate-400">Target Income:</span><span id="s_inc" class="text-frost font-medium"></span></div>
+          <div class="flex justify-between text-xs"><span class="text-slate-400">Occupation:</span><span id="s_occ" class="text-frost font-medium"></span></div>
+          <div class="flex justify-between text-xs"><span class="text-slate-400">Risk:</span><span id="s_risk" class="text-frost font-medium"></span></div>
+          <div class="flex justify-between text-xs"><span class="text-slate-400">Contact Time:</span><span id="s_time" class="text-frost font-medium"></span></div>
+        </div>
+
+        <p class="text-slate-500 text-xs">Questions? WhatsApp us at <span class="text-sky">+91 98765 43210</span></p>
+      </div>
+
+    </div><!-- /quiz-card -->
+
+    <!-- Trust bar -->
+    <div class="flex flex-wrap justify-center gap-4 mt-5 text-slate-500 text-xs">
+      <span>🔒 SSL Secured</span>
+      <span>✅ SEBI Compliant Disclosure</span>
+      <span>📊 Oil Sector Experts</span>
+      <span>🇮🇳 Made for India</span>
+    </div>
+  </div><!-- /container -->
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbxSr6dkb0xwB4oX3QII9IjEJJxAy2PBi5aZgkpmna1xdzrs4AmnMdZ434F4vUdG7fi6/exec';
+// ────────────────────────────────────────────────────────
+
+const answers = {};
+let currentStep = 1;
+
+// ── Attach option-button click handlers ─────────────────
+document.querySelectorAll('[id^="opts"]').forEach(group => {
+  const stepNum = group.id.replace('opts','');
+  group.querySelectorAll('.opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      group.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers['q' + stepNum] = btn.dataset.val;
+      const nextBtn = document.getElementById('next' + stepNum);
+      if (nextBtn) nextBtn.classList.remove('hidden');
+    });
+  });
+});
+
+// ── Navigate between steps ───────────────────────────────
+function goTo(target) {
+  const prev = currentStep === 'lead' ? 'stepLead' : 'step' + currentStep;
+  const curr = target === 'lead' ? 'stepLead' : 'step' + target;
+
+  document.getElementById(prev).classList.remove('active');
+  document.getElementById(curr).classList.add('active');
+  currentStep = target;
+
+  updateProgress(target);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(step) {
+  const wrap  = document.getElementById('progressWrap');
+  const bar   = document.getElementById('progressBar');
+  const label = document.getElementById('stepLabel');
+  const pct   = document.getElementById('pctLabel');
+
+  if (step === 'lead' || step === 'success') {
+    wrap.style.opacity = step === 'lead' ? '0.4' : '0';
+    bar.style.width = '100%';
+    label.textContent = 'Step 5 of 5';
+    pct.textContent   = '100%';
+    return;
+  }
+  wrap.style.opacity = '1';
+  const p = Math.round(((step - 1) / 5) * 100);
+  bar.style.width    = p + '%';
+  label.textContent  = `Step ${step} of 5`;
+  pct.textContent    = p + '%';
+}
+
+// ── Lead form validation & submission ───────────────────
+function submitLead(e) {
+  e.preventDefault();
+  let valid = true;
+
+  const name   = document.getElementById('fname').value.trim();
+  const email  = document.getElementById('femail').value.trim();
+  const phone  = document.getElementById('fphone').value.trim();
+
+  // Name
+  if (name.length < 2) {
+    showErr('fname', 'fnameErr', true); valid = false;
+  } else {
+    showErr('fname', 'fnameErr', false);
+  }
+
+  // Gmail
+  const gmailRe = /^[a-zA-Z0-9._%+\-]+@gmail\.com$/;
+  if (!gmailRe.test(email)) {
+    showErr('femail', 'femailErr', true); valid = false;
+  } else {
+    showErr('femail', 'femailErr', false);
+  }
+
+  // Indian mobile (10 digits, starts with 6-9)
+  const phoneRe = /^[6-9]\d{9}$/;
+  if (!phoneRe.test(phone)) {
+    showErr('fphone', 'fphoneErr', true); valid = false;
+  } else {
+    showErr('fphone', 'fphoneErr', false);
+  }
+
+  if (!valid) return;
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Submitting…';
+
+  const payload = {
+    name:  name,
+    phone: '+91' + phone,
+    email: email,
+    q1:    answers.q1 || '',
+    q2:    answers.q2 || '',
+    q3:    answers.q3 || '',
+    q4:    answers.q4 || '',
+    q5:    answers.q5 || '',
+  };
+
+  console.log('[Quiz] Submitting lead to GAS:', payload);
+
+  fetch(GAS_URL, {
+    method:  'POST',
+    mode:    'no-cors', // required for GAS — response will be opaque but data still saves
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify(payload),
+  })
+  .then(() => {
+    console.log('[Quiz] ✅ Fetch sent successfully (opaque response expected with no-cors).');
+    showSuccess(name, payload);
+  })
+  .catch((err) => {
+    console.warn('[Quiz] ⚠ Fetch error (data may still have saved):', err);
+    showSuccess(name, payload); // show success anyway — GAS no-cors often triggers catch in strict environments
+  });
+}
+
+function showSuccess(name, data) {
+  // Populate summary
+  document.getElementById('successName').textContent = name.split(' ')[0];
+  document.getElementById('s_exp').textContent  = data.experience;
+  document.getElementById('s_inc').textContent  = data.income;
+  document.getElementById('s_occ').textContent  = data.occupation;
+  document.getElementById('s_risk').textContent = data.risk;
+  document.getElementById('s_time').textContent = data.contactTime;
+
+  document.getElementById('stepLead').classList.remove('active');
+  document.getElementById('stepSuccess').classList.add('active');
+  updateProgress('success');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showErr(fieldId, errId, show) {
+  document.getElementById(fieldId).classList.toggle('error', show);
+  document.getElementById(errId).classList.toggle('hidden', !show);
+}
+</script>
+</body>
+</html>
