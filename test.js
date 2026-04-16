@@ -8,7 +8,7 @@ const https = require('https');
 const fs    = require('fs');
 const path  = require('path');
 
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbxSr6dkb0xwB4oX3QII9IjEJJxAy2PBi5aZgkpmna1xdzrs4AmnMdZ434F4vUdG7fi6/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwh1Evkv-inK9nRz5YPXNvcnH8FtLwMneHiFWAxKMqTm36TSKfwU1ePOp_PUlJR0hTR/exec';
 
 // ── Simulate a completed quiz submission ─────────────────────────
 const payload = {
