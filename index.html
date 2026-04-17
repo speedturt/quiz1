@@ -331,31 +331,91 @@
       </div>
 
       <!-- ─────────────── SUCCESS ─────────────── -->
-      <div id="stepSuccess" class="screen text-center py-4">
-        <div class="flex justify-center mb-5">
-          <div class="success-ring w-20 h-20 rounded-full bg-sky/10 border-2 border-sky flex items-center justify-center text-4xl">
-            ✅
+      <div id="stepSuccess" class="screen py-4">
+
+        <!-- Header -->
+        <div class="text-center mb-6">
+          <div class="flex justify-center mb-4">
+            <div class="success-ring w-16 h-16 rounded-full bg-sky/10 border-2 border-sky flex items-center justify-center text-3xl">
+              ✦
+            </div>
+          </div>
+          <div class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold text-sky uppercase tracking-widest mb-3">
+            Access Granted
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-frost leading-tight mb-2">
+            Your Investment Profile<br/>Has Been Received
+          </h2>
+          <p class="text-slate-400 text-sm max-w-sm mx-auto">
+            Thank you, <strong id="successName" class="text-sky font-semibold"></strong>. A dedicated analyst from our India Oil Desk has been assigned to your account and will reach out to you at your preferred contact time.
+          </p>
+        </div>
+
+        <!-- Profile summary -->
+        <div class="badge rounded-2xl p-5 text-left mb-5">
+          <p class="text-slate-400 font-semibold text-xs uppercase tracking-widest mb-4">Your Investment Profile</p>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400 text-xs">Experience Level</span>
+              <span id="s_exp" class="text-frost text-sm font-semibold"></span>
+            </div>
+            <div class="w-full h-px bg-slate-700/60"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400 text-xs">Target Monthly Income</span>
+              <span id="s_inc" class="text-sky text-sm font-bold"></span>
+            </div>
+            <div class="w-full h-px bg-slate-700/60"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400 text-xs">Occupation</span>
+              <span id="s_occ" class="text-frost text-sm font-semibold"></span>
+            </div>
+            <div class="w-full h-px bg-slate-700/60"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400 text-xs">Risk Strategy</span>
+              <span id="s_risk" class="text-frost text-sm font-semibold"></span>
+            </div>
+            <div class="w-full h-px bg-slate-700/60"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400 text-xs">Preferred Contact</span>
+              <span id="s_time" class="text-frost text-sm font-semibold"></span>
+            </div>
           </div>
         </div>
-        <h2 class="text-2xl font-extrabold text-frost mb-2">You're In! 🎉</h2>
-        <p class="text-slate-300 text-sm mb-1">
-          Thank you, <strong id="successName" class="text-sky"></strong>!
-        </p>
-        <p class="text-slate-400 text-sm max-w-xs mx-auto mb-6">
-          Our senior oil-sector analyst will contact you on WhatsApp within <span class="text-sky font-semibold">24 hours</span> with your personalised investment report.
-        </p>
 
-        <!-- Summary card -->
-        <div class="badge rounded-xl p-4 text-left space-y-2 mb-6 text-sm">
-          <p class="text-slate-400 font-semibold text-xs uppercase tracking-wider mb-2">Your Answers</p>
-          <div class="flex justify-between text-xs"><span class="text-slate-400">Experience:</span><span id="s_exp" class="text-frost font-medium"></span></div>
-          <div class="flex justify-between text-xs"><span class="text-slate-400">Target Income:</span><span id="s_inc" class="text-frost font-medium"></span></div>
-          <div class="flex justify-between text-xs"><span class="text-slate-400">Occupation:</span><span id="s_occ" class="text-frost font-medium"></span></div>
-          <div class="flex justify-between text-xs"><span class="text-slate-400">Risk:</span><span id="s_risk" class="text-frost font-medium"></span></div>
-          <div class="flex justify-between text-xs"><span class="text-slate-400">Contact Time:</span><span id="s_time" class="text-frost font-medium"></span></div>
+        <!-- Capital notice -->
+        <div class="rounded-2xl p-5 mb-5 text-left" style="background:linear-gradient(135deg,rgba(56,189,248,0.08) 0%,rgba(14,165,233,0.04) 100%);border:1px solid rgba(56,189,248,0.3)">
+          <p class="text-sky text-xs font-bold uppercase tracking-widest mb-2">Next Step — Activate Your Plan</p>
+          <p class="text-frost text-sm leading-relaxed mb-3">
+            To activate your personalised oil-sector strategy, your analyst will guide you through funding your trading account with an initial capital of
+            <strong class="text-sky">$250 <span class="text-slate-400 font-normal">(approx. ₹21,000)</span></strong>.
+          </p>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            This is not a fee — it is <strong class="text-frost">your capital for the first trade</strong>, held in your personal account at all times. Your analyst will walk you through every step of the setup once you are ready.
+          </p>
         </div>
 
-        <p class="text-slate-500 text-xs">Questions? WhatsApp us at <span class="text-sky">+91 98765 43210</span></p>
+        <!-- What happens next -->
+        <div class="space-y-3 mb-5">
+          <p class="text-slate-400 font-semibold text-xs uppercase tracking-widest">What Happens Next</p>
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-sky/15 border border-sky/40 text-sky text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+            <p class="text-slate-300 text-sm">Your analyst reviews your profile and prepares a tailored oil-sector entry strategy.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-sky/15 border border-sky/40 text-sky text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+            <p class="text-slate-300 text-sm">You receive a call to open and verify your trading account — the process takes under 10 minutes.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-sky/15 border border-sky/40 text-sky text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+            <p class="text-slate-300 text-sm">Once your initial capital ($250) is deposited, your analyst activates the strategy and your first position is placed.</p>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <p class="text-slate-600 text-xs text-center leading-relaxed">
+          Trading involves risk. Past performance is not indicative of future results. Capital deposited is held in your personal brokerage account.
+        </p>
+
       </div>
 
     </div><!-- /quiz-card -->
