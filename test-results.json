@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-16T22:06:23.447Z",
+  "payload": {
+    "name": "Test User",
+    "phone": "+91 9876543210",
+    "email": "testuser@example.com",
+    "q1": "Intermediate",
+    "q2": "₹1,00,000",
+    "q3": "Business Owner",
+    "q4": "Balanced",
+    "q5": "Evening"
+  },
+  "validation": "PASS",
+  "errors": [],
+  "gasResponse": "{\"result\":\"success\"}",
+  "gasStatus": 200
+}
