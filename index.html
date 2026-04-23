@@ -179,18 +179,21 @@
 
       <!-- ─────────────── STEP 1 ─────────────── -->
       <div id="step1" class="screen active">
-        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">What is your investment experience?</h2>
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Have you ever invested money before—in stocks, mutual funds, fixed deposits, or any other instrument?</h2>
         <p class="text-slate-400 text-sm mb-5">Select the option that best describes you.</p>
         <div class="space-y-3" id="opts1">
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Beginner">
-            🌱 <span class="ml-2">Beginner — just getting started</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Active investor">
+            ✅ <span class="ml-2">Yes — I have active investments right now</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Intermediate">
-            📈 <span class="ml-2">Intermediate — some prior investments</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Past investor">
+            📊 <span class="ml-2">Yes — I have invested before, but not currently</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Pro">
-            🏆 <span class="ml-2">Pro — seasoned investor</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Never invested" data-ineligible="true">
+            ❌ <span class="ml-2">No — I have never invested</span>
           </button>
+        </div>
+        <div id="ineligibleMsg" class="hidden mt-5 rounded-xl px-5 py-4 text-sm text-slate-300 leading-relaxed" style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.3)">
+          Our program is designed for investors with prior experience. Please check back when you are ready to start.
         </div>
         <button id="next1" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(2)">
           Continue →
@@ -199,17 +202,20 @@
 
       <!-- ─────────────── STEP 2 ─────────────── -->
       <div id="step2" class="screen">
-        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Desired monthly income in ₹?</h2>
-        <p class="text-slate-400 text-sm mb-5">What is your target monthly earnings from investments?</p>
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">How much capital are you ready to allocate for oil sector investments?</h2>
+        <p class="text-slate-400 text-sm mb-5">Select the range that best describes your situation.</p>
         <div class="space-y-3" id="opts2">
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹50,000">
-            💼 <span class="ml-2">₹50,000 / month</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Under ₹10,000">
+            🔴 <span class="ml-2">Under ₹10,000 — Still exploring</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹1,00,000">
-            💎 <span class="ml-2">₹1,00,000 / month</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹10,000 – ₹50,000">
+            🟡 <span class="ml-2">₹10,000 – ₹50,000 — Ready to start</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹5,00,000+">
-            🚀 <span class="ml-2">₹5,00,000+ / month</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹50,000 – ₹20,00,000">
+            🟢 <span class="ml-2">₹50,000 – ₹20,00,000 — Serious investor</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="₹20,00,000+">
+            🟢 <span class="ml-2">₹20,00,000+ — Experienced allocator</span>
           </button>
         </div>
         <button id="next2" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(3)">
@@ -219,20 +225,20 @@
 
       <!-- ─────────────── STEP 3 ─────────────── -->
       <div id="step3" class="screen">
-        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Current occupation?</h2>
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">What best describes your current financial situation?</h2>
         <p class="text-slate-400 text-sm mb-5">This helps us tailor your investment strategy.</p>
         <div class="space-y-3" id="opts3">
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Self-employed">
-            🛠 <span class="ml-2">Self-employed</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Salaried professional">
+            💼 <span class="ml-2">Salaried professional — stable monthly income</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Professional">
-            👔 <span class="ml-2">Professional (Salaried)</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Business owner">
+            🏢 <span class="ml-2">Business owner / entrepreneur</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Business Owner">
-            🏢 <span class="ml-2">Business Owner</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Already trading">
+            📊 <span class="ml-2">Already trading — looking to diversify</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Other">
-            🌐 <span class="ml-2">Other</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Retired">
+            🏦 <span class="ml-2">Retired / managing savings</span>
           </button>
         </div>
         <button id="next3" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(4)">
@@ -242,17 +248,20 @@
 
       <!-- ─────────────── STEP 4 ─────────────── -->
       <div id="step4" class="screen">
-        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Risk tolerance?</h2>
-        <p class="text-slate-400 text-sm mb-5">How comfortable are you with investment risk?</p>
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">What is your biggest challenge with investments right now?</h2>
+        <p class="text-slate-400 text-sm mb-5">Select the option that resonates most with you.</p>
         <div class="space-y-3" id="opts4">
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Low">
-            🛡 <span class="ml-2">Low — protect my capital above all</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Don't know where to start">
+            😤 <span class="ml-2">Don't know where to start with oil markets</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Balanced">
-            ⚖️ <span class="ml-2">Balanced — steady growth with managed risk</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Underperforming portfolio">
+            📉 <span class="ml-2">My current portfolio is underperforming</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Aggressive">
-            ⚡ <span class="ml-2">Aggressive — maximum returns</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="No time to research">
+            ⏰ <span class="ml-2">No time to research and monitor manually</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Worried about risks">
+            🔒 <span class="ml-2">Worried about risks — need a safer strategy</span>
           </button>
         </div>
         <button id="next4" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(5)">
@@ -262,17 +271,17 @@
 
       <!-- ─────────────── STEP 5 ─────────────── -->
       <div id="step5" class="screen">
-        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Preferred contact time?</h2>
-        <p class="text-slate-400 text-sm mb-5">When should our analyst reach out to you?</p>
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Do you currently have a brokerage account?</h2>
+        <p class="text-slate-400 text-sm mb-5">This helps us prepare the right onboarding path for you.</p>
         <div class="space-y-3" id="opts5">
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Morning">
-            🌅 <span class="ml-2">Morning (9 AM – 12 PM)</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Active brokerage account">
+            ✅ <span class="ml-2">Yes — I have an active brokerage account</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Evening">
-            🌆 <span class="ml-2">Evening (5 PM – 9 PM)</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Inactive brokerage account">
+            🔄 <span class="ml-2">Yes — but it's inactive / not in use</span>
           </button>
-          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="ASAP">
-            ⚡ <span class="ml-2">ASAP — call me now!</span>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="No brokerage account">
+            ❌ <span class="ml-2">No — I don't have one yet</span>
           </button>
         </div>
         <button id="next5" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo('lead')">
@@ -464,7 +473,16 @@ document.querySelectorAll('[id^="opts"]').forEach(group => {
       btn.classList.add('selected');
       answers['q' + stepNum] = btn.dataset.val;
       const nextBtn = document.getElementById('next' + stepNum);
-      if (nextBtn) nextBtn.classList.remove('hidden');
+      if (nextBtn) {
+        const ineligible = btn.dataset.ineligible === 'true';
+        if (ineligible) {
+          document.getElementById('ineligibleMsg').classList.remove('hidden');
+          nextBtn.classList.add('hidden');
+        } else {
+          document.getElementById('ineligibleMsg') && document.getElementById('ineligibleMsg').classList.add('hidden');
+          nextBtn.classList.remove('hidden');
+        }
+      }
     });
   });
 });
