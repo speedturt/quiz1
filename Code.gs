@@ -11,30 +11,37 @@ function doPost(e) {
     var data = e.parameter;
     var sheet  = getOrCreateSheet(SHEET_NAME);
 
-    // Write header row on first use
+    // Write header row on first use; patch Q6 if sheet predates this update
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         'Timestamp',
         'Full Name',
         'Phone Number',
         'Email',
-        'Q1 — Experience',
-        'Q2 — Target Income',
-        'Q3 — Occupation',
-        'Q4 — Risk Tolerance',
-        'Q5 — Contact Time',
+        'Q1 — Investment Experience',
+        'Q2 — Capital Ready',
+        'Q3 — Financial Situation',
+        'Q4 — Main Challenge',
+        'Q5 — Brokerage Account',
+        'Q6 — Deposit Ready',
       ]);
-
-      // Style header
-      var header = sheet.getRange(1, 1, 1, 9);
+      var header = sheet.getRange(1, 1, 1, 10);
       header.setFontWeight('bold');
       header.setBackground('#0f172a');
       header.setFontColor('#38bdf8');
+    } else if (sheet.getLastColumn() < 10) {
+      // Existing sheet missing Q6 column — add it
+      var q6Cell = sheet.getRange(1, 10);
+      q6Cell.setValue('Q6 — Deposit Ready');
+      q6Cell.setFontWeight('bold').setBackground('#0f172a').setFontColor('#38bdf8');
     }
+
+    // Force phone column (C) to plain text so "+91…" isn't parsed as a formula
+    sheet.getRange(1, 3, sheet.getMaxRows(), 1).setNumberFormat('@');
 
     // Append lead row — order matches header exactly
     sheet.appendRow([
-      new Date().toISOString(), // Timestamp always server-generated
+      new Date().toISOString(),
       data.name  || '',
       data.phone || '',
       data.email || '',
@@ -43,10 +50,11 @@ function doPost(e) {
       data.q3    || '',
       data.q4    || '',
       data.q5    || '',
+      data.q6    || '',
     ]);
 
     // Auto-resize columns for readability
-    sheet.autoResizeColumns(1, 9);
+    sheet.autoResizeColumns(1, 10);
 
     return buildResponse({ result: 'success' });
 
@@ -83,8 +91,9 @@ function testDoPost() {
         q1:    'Intermediate',
         q2:    '₹1,00,000',
         q3:    'Business Owner',
-        q4:    'Balanced',
-        q5:    'Evening',
+        q4:    'Worried about risks',
+        q5:    'Active brokerage account',
+        q6:    'Ready — $150',
       })
     }
   };

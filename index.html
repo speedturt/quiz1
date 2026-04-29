@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oil Investment Opportunity — India</title>
+  <title>Pro AI — Smart Market Analysis for Indian Investors</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -32,11 +32,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '939576768853907');
+    fbq('init', '2019655915563690');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=939576768853907&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=2019655915563690&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
 
@@ -137,13 +137,13 @@
     <div class="max-w-xl mx-auto px-4 pt-10 pb-6 text-center">
       <div class="badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold text-sky uppercase tracking-widest mb-5">
         <span class="w-2 h-2 bg-sky rounded-full animate-pulse"></span>
-        Limited Spots — India 2026
+        Pro AI — India 2026
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-3 text-frost">
-        Earn <span class="text-sky">₹50,000–₹5,00,000/mo</span><br/>with India's Oil Sector
+        How Are Indian Investors Using <span class="text-sky">AI to Navigate Crypto Markets</span> in 2026?
       </h1>
       <p class="text-slate-400 text-sm md:text-base max-w-sm mx-auto">
-        Answer 5 quick questions and get a personalised investment plan from our analysts — 100% free.
+        Answer 6 quick questions and get a personalised market analysis plan from our specialists — 100% free.
       </p>
     </div>
   </div>
@@ -155,7 +155,7 @@
       <!-- Progress -->
       <div id="progressWrap" class="mb-6">
         <div class="flex justify-between text-xs text-slate-400 mb-2 font-medium">
-          <span id="stepLabel">Step 1 of 5</span>
+          <span id="stepLabel">Step 1 of 6</span>
           <span id="pctLabel">0%</span>
         </div>
         <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
@@ -188,7 +188,7 @@
 
       <!-- STEP 2 -->
       <div id="step2" class="screen">
-        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">How much capital are you ready to allocate for oil sector investments?</h2>
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">How much capital are you ready to allocate for crypto market investments?</h2>
         <p class="text-slate-400 text-sm mb-5">Select the range that best describes your situation.</p>
         <div class="space-y-3" id="opts2">
           <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Under ₹10,000">
@@ -238,7 +238,7 @@
         <p class="text-slate-400 text-sm mb-5">Select the option that resonates most with you.</p>
         <div class="space-y-3" id="opts4">
           <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Don't know where to start">
-            😤 <span class="ml-2">Don't know where to start with oil markets</span>
+            😤 <span class="ml-2">Don't know where to start with crypto markets</span>
           </button>
           <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Underperforming portfolio">
             📉 <span class="ml-2">My current portfolio is underperforming</span>
@@ -270,8 +270,31 @@
             ❌ <span class="ml-2">No — I don't have one yet</span>
           </button>
         </div>
-        <button id="next5" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo('lead')">
-          See My Investment Plan →
+        <button id="next5" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo(6)">
+          Continue →
+        </button>
+      </div>
+
+      <!-- STEP 6 -->
+      <div id="step6" class="screen">
+        <h2 class="text-lg md:text-xl font-bold text-frost mb-1">Are you ready to make an initial deposit of $150 (approx. ₹12,500) to activate your personalised crypto market analysis plan?</h2>
+        <p class="text-slate-400 text-sm mb-5">This is your trading capital — held in your personal account at all times.</p>
+        <div class="space-y-3" id="opts6">
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Ready — $150">
+            ✅ <span class="ml-2">Yes — I'm ready to start with $150</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Need more info — $150">
+            🤔 <span class="ml-2">I'd like to know more before I decide</span>
+          </button>
+          <button class="opt-btn w-full text-left rounded-xl px-5 py-3.5 font-medium" data-val="Not ready — $150" data-ineligible6="true">
+            ❌ <span class="ml-2">No — $150 is too much for me right now</span>
+          </button>
+        </div>
+        <div id="ineligibleMsg6" class="hidden mt-5 rounded-xl px-5 py-4 text-sm text-slate-300 leading-relaxed" style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.3)">
+          Our programme requires a minimum starting deposit of $150. Please come back when you are ready — your specialist will be here.
+        </div>
+        <button id="next6" class="cta-btn w-full mt-6 py-3.5 rounded-xl text-sm hidden" onclick="goTo('lead')">
+          See My Analysis Plan →
         </button>
       </div>
 
@@ -354,7 +377,7 @@
             Your Investment Profile<br/>Has Been Received
           </h2>
           <p class="text-slate-400 text-sm max-w-sm mx-auto">
-            Thank you, <strong id="successName" class="text-sky font-semibold"></strong>. A dedicated analyst from our India Oil Desk has been assigned to your account and will be in touch shortly.
+            Thank you, <strong id="successName" class="text-sky font-semibold"></strong>. A dedicated specialist from our Pro AI team has been assigned to your account and will be in touch shortly.
           </p>
         </div>
 
@@ -386,6 +409,11 @@
               <span class="text-slate-400 text-xs">Brokerage Account</span>
               <span id="s_time" class="text-frost text-sm font-semibold"></span>
             </div>
+            <div class="w-full h-px bg-slate-700/60"></div>
+            <div class="flex justify-between items-center">
+              <span class="text-slate-400 text-xs">Ready for $150 Deposit</span>
+              <span id="s_dep" class="text-sky text-sm font-bold"></span>
+            </div>
           </div>
         </div>
 
@@ -393,11 +421,11 @@
         <div class="rounded-2xl p-5 mb-5 text-left" style="background:linear-gradient(135deg,rgba(56,189,248,0.08) 0%,rgba(14,165,233,0.04) 100%);border:1px solid rgba(56,189,248,0.3)">
           <p class="text-sky text-xs font-bold uppercase tracking-widest mb-2">Next Step — Activate Your Plan</p>
           <p class="text-frost text-sm leading-relaxed mb-3">
-            To activate your personalised oil-sector strategy, your analyst will guide you through funding your trading account with an initial capital of
-            <strong class="text-sky">$250 <span class="text-slate-400 font-normal">(approx. ₹21,000)</span></strong>.
+            To activate your personalised crypto market analysis plan, your specialist will guide you through setting up your trading account with an initial deposit of
+            <strong class="text-sky">$150 <span class="text-slate-400 font-normal">(approx. ₹12,500)</span></strong>.
           </p>
           <p class="text-slate-400 text-xs leading-relaxed">
-            This is not a fee — it is <strong class="text-frost">your capital for the first trade</strong>, held in your personal account at all times. Your analyst will walk you through every step of the setup once you are ready.
+            This is not a fee — it is <strong class="text-frost">your capital for the first session, held in your personal account at all times</strong>. Your specialist will walk you through every step of the setup once you are ready.
           </p>
         </div>
 
@@ -406,7 +434,7 @@
           <p class="text-slate-400 font-semibold text-xs uppercase tracking-widest">What Happens Next</p>
           <div class="flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-sky/15 border border-sky/40 text-sky text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
-            <p class="text-slate-300 text-sm">Your analyst reviews your profile and prepares a tailored oil-sector entry strategy.</p>
+            <p class="text-slate-300 text-sm">Your specialist reviews your profile and prepares a tailored crypto market entry strategy based on current data.</p>
           </div>
           <div class="flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-sky/15 border border-sky/40 text-sky text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
@@ -414,7 +442,7 @@
           </div>
           <div class="flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-sky/15 border border-sky/40 text-sky text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
-            <p class="text-slate-300 text-sm">Once your initial capital ($250) is deposited, your analyst activates the strategy and your first position is placed.</p>
+            <p class="text-slate-300 text-sm">Once your initial deposit ($150) is confirmed, your specialist activates the analysis tools and walks you through your first position.</p>
           </div>
         </div>
 
@@ -428,8 +456,8 @@
     <!-- Trust bar -->
     <div class="flex flex-wrap justify-center gap-4 mt-5 text-slate-500 text-xs">
       <span>🔒 SSL Secured</span>
-      <span>✅ SEBI Compliant Disclosure</span>
-      <span>📊 Oil Sector Experts</span>
+      <span>✅ Regulated Platform</span>
+      <span>📊 AI-Powered Market Analysis</span>
       <span>🇮🇳 Made for India</span>
     </div>
   </div>
@@ -449,14 +477,26 @@ document.querySelectorAll('[id^="opts"]').forEach(group => {
       answers['q' + stepNum] = btn.dataset.val;
       const nextBtn = document.getElementById('next' + stepNum);
       if (nextBtn) {
-        const ineligible = btn.dataset.ineligible === 'true';
-        if (ineligible) {
-          document.getElementById('ineligibleMsg').classList.remove('hidden');
-          nextBtn.classList.add('hidden');
+        if (stepNum === '6') {
+          const ineligible6 = btn.dataset.ineligible6 === 'true';
+          const msg6 = document.getElementById('ineligibleMsg6');
+          if (ineligible6) {
+            msg6.classList.remove('hidden');
+            nextBtn.classList.add('hidden');
+          } else {
+            msg6.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
+          }
         } else {
-          const msg = document.getElementById('ineligibleMsg');
-          if (msg) msg.classList.add('hidden');
-          nextBtn.classList.remove('hidden');
+          const ineligible = btn.dataset.ineligible === 'true';
+          if (ineligible) {
+            document.getElementById('ineligibleMsg').classList.remove('hidden');
+            nextBtn.classList.add('hidden');
+          } else {
+            const msg = document.getElementById('ineligibleMsg');
+            if (msg) msg.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
+          }
         }
       }
     });
@@ -482,14 +522,14 @@ function updateProgress(step) {
   if (step === 'lead' || step === 'success') {
     wrap.style.opacity = step === 'lead' ? '0.4' : '0';
     bar.style.width = '100%';
-    label.textContent = 'Step 5 of 5';
+    label.textContent = 'Step 6 of 6';
     pct.textContent   = '100%';
     return;
   }
   wrap.style.opacity = '1';
-  const p = Math.round(((step - 1) / 5) * 100);
+  const p = Math.round(((step - 1) / 6) * 100);
   bar.style.width    = p + '%';
-  label.textContent  = `Step ${step} of 5`;
+  label.textContent  = `Step ${step} of 6`;
   pct.textContent    = p + '%';
 }
 
@@ -536,6 +576,7 @@ function submitLead(e) {
     q3:    answers.q3 || '',
     q4:    answers.q4 || '',
     q5:    answers.q5 || '',
+    q6:    answers.q6 || '',
   };
 
   const formData = new URLSearchParams();
@@ -557,6 +598,7 @@ function showSuccess(name, data) {
   document.getElementById('s_occ').textContent  = data.q3;
   document.getElementById('s_risk').textContent = data.q4;
   document.getElementById('s_time').textContent = data.q5;
+  document.getElementById('s_dep').textContent  = data.q6;
 
   document.getElementById('stepLead').classList.remove('active');
   document.getElementById('stepSuccess').classList.add('active');
